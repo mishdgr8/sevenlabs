@@ -7,15 +7,15 @@ import { Montserrat } from "next/font/google";
 const Navbar = () => {
   return (
     <nav className="w-full  px-[6rem] py-4 flex justify-between items-center">
-      <Link className=" font-bold text-2xl" href="your-logo.png">
+      <Link className=" font-bold text-2xl" href="/">
         SEVENLABS
       </Link>
 
       <div className=" flex items-center space-x-4 text-sm">
         <div className="space-x-4">
-          <a href="#" className="text-white">
+          <Link href="/about" className="text-white">
             Career
-          </a>
+          </Link>
         </div>
         <button
           className="bg-green-500 text-white 

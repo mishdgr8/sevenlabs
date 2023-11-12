@@ -1,8 +1,9 @@
 import Image from "next/image";
-import Navbar from "./components/Navbar";
+import Navbar from "../components/Navbar";
 import { Montserrat } from "next/font/google";
-import AnimateText from "./components/AnimateText";
-import Hero from "./components/Hero";
+import AnimateText from "../components/AnimateText";
+import Hero from "../components/Hero";
+
 export default function Home() {
   return (
     <main className="flex m flex-col items-center justify-between py-0 px-12 leading-7">

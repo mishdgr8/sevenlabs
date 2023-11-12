@@ -16,9 +16,9 @@ const config: Config = {
     },
   },
   plugins: [],
-  purge: {
-    enabled: process.env.NODE_ENV === "production",
-    content: ["./src/**/*.html", "./src/**/*.tsx", "./src/**/*.ts"],
-  },
+  // purge: {
+  //   enabled: process.env.NODE_ENV === "production",
+  //   content: ["./src/**/*.html", "./src/**/*.tsx", "./src/**/*.ts"],
+  // },
 };
 export default config;
