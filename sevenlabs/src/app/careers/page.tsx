@@ -18,11 +18,11 @@ export default function Page() {
         </div>
       </div>
       <div
-        className=" flex items-center justify-center border
-       border-solid rounded-[20px]  max-w-fit"
+        className=" card flex items-center justify-center border
+       border-solid rounded-[20px]   max-w-fit"
       >
-        <div className="flex flex-col w-[28rem] h-auto bg-dark p-6 shadow-white text-white ">
-          <h3>Full Stack Developer</h3>
+        <div className="flex flex-col w-[28rem] h-auto bg-dark p-6 text-white ">
+          <h3 className="text-xl font-bold pb-2">Full Stack Developer</h3>
           <p className="">
             As a Full Stack Developer at SevenLabs, you will be working with our
             development team to develop and maintain applications,

@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar";
 import { Montserrat } from "next/font/google";
 import AnimateText from "../components/AnimateText";
 import Hero from "../components/Hero";
+import logo from "@/../public/logo.png";
+import logs from "@/../public/logs.png";
 
 export default function Home() {
   return (
@@ -24,8 +26,20 @@ export default function Home() {
         </button>
       </div>
       <div className="mt-6 text-2xl font-extrabold">
-        <h3>Our team doesn't just build,</h3>
-        <h3></h3>
+        <h3>Our Clients and Partners</h3>
+      </div>
+      <div className="flex w-32 items-center justify-center mt-6 mb-10">
+        <Image src={logo} className="w-20 h-auto" />
+        <Image src={logs} className="w-40 h-auto" />
+        <Image src={logo} className="w-20 h-auto" />
+        <Image src={logs} className="w-40 h-auto" />
+        <Image src={logo} className="w-20 h-auto" />
+      </div>
+
+      <div className="flex flex-col m-10 items-center justify-center  font-extrabold">
+        <h3 className="text-4xl">Our team doesn't just build,</h3>
+
+        <h3 className="gradient-text text-3xl">we co-create</h3>
       </div>
     </main>
   );

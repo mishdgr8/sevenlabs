@@ -21,6 +21,14 @@
     --background-end-hsl: 210, 30%, 15%; /* Lighter bluish */
   }
 }
+.card {
+  background: rgba(255, 255, 255, 0.08);
+}
+.gradient-text {
+  background: linear-gradient(to right, purple, violet, skyblue);
+  -webkit-background-clip: text;
+  color: transparent;
+}
 
 /* body {
   color: rgb(var(--foreground-rgb));
