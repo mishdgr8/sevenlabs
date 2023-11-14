@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import { Montserrat } from "next/font/google";
@@ -40,6 +42,24 @@ export default function Home() {
         <h3 className="text-4xl">Our team doesn't just build,</h3>
 
         <h3 className="gradient-text text-3xl">we co-create</h3>
+      </div>
+      <div className="relative">
+        <div className="  flex items-center justify-center w-[400px] h-[400px] rounded-full bg-slate-500 ">
+          <div className="  w-[300px] h-[300px] rounded-full bg-slate-800">
+            <Image
+              src={logo}
+              className="w-[70px] h-auto relative top-[-20%] left-[84%]"
+            />
+            <Image
+              src={logs}
+              className="w-40 h-auto relative top-[40%] right-[20%]"
+            />
+            <Image
+              src={logo}
+              className="w-[70px] h-auto relative bottom-[20%] left-[70%]"
+            />
+          </div>
+        </div>
       </div>
     </main>
   );
