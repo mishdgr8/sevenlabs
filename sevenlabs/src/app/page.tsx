@@ -31,11 +31,11 @@ export default function Home() {
         <h3>Our Clients and Partners</h3>
       </div>
       <div className="flex w-32 items-center justify-center mt-6 mb-10">
-        <Image src={logo} className="w-20 h-auto" />
-        <Image src={logs} className="w-40 h-auto" />
-        <Image src={logo} className="w-20 h-auto" />
-        <Image src={logs} className="w-40 h-auto" />
-        <Image src={logo} className="w-20 h-auto" />
+        <Image src={logo} className="w-20 h-auto" alt={""} />
+        <Image src={logs} className="w-40 h-auto" alt={""} />
+        <Image src={logo} className="w-20 h-auto" alt={""} />
+        <Image src={logs} className="w-40 h-auto" alt={""} />
+        <Image src={logo} className="w-20 h-auto" alt={""} />
       </div>
 
       <div className="flex flex-col m-10 items-center justify-center  font-extrabold">
@@ -47,14 +47,17 @@ export default function Home() {
         <div className="  flex items-center justify-center w-[400px] h-[400px] rounded-full bg-slate-500 ">
           <div className="  w-[300px] h-[300px] rounded-full bg-slate-800">
             <Image
+              alt={""}
               src={logo}
               className="w-[70px] h-auto relative top-[-20%] left-[84%]"
             />
             <Image
+              alt={""}
               src={logs}
               className="w-40 h-auto relative top-[40%] right-[20%]"
             />
             <Image
+              alt={""}
               src={logo}
               className="w-[70px] h-auto relative bottom-[20%] left-[70%]"
             />

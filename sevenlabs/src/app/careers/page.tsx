@@ -6,7 +6,7 @@ export default function Page() {
     <main className="flex flex-col items-center max-h-screen mb-6 ">
       <div className="  text-center justify-between py-0 px-12 leading-7">
         <div>
-          <Trial heading={"Join our team"} />
+          <Trial heading={"Join our team"} tail={undefined} />
           <p className="mt-8">
             Join us to elevate your craft while building the platforms{" "}
           </p>
