@@ -1,6 +1,6 @@
 import React from "react";
 
-const Trial = ({ heading, tail }) => {
+const Trial = ({ heading, tail }): React.JSX.Element => {
   return (
     <div className="w-full">
       <div className="flex w-full h-fit flex-col items-center justify-between py-0 px-12 ">
