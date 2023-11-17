@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -18,13 +20,14 @@ const Navbar = () => {
             Careers
           </Link>
         </div>
-        <button
+        <motion.button
           className="bg-green-500 text-white 
          px-4 py-0 rounded-[20px] flex items-center"
+          whileTap={{ scale: 0.9 }}
         >
           Book a Call
           <FaArrowRight className="ml-[2px]" />
-        </button>
+        </motion.button>
       </div>
     </nav>
   );

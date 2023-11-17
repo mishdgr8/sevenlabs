@@ -39,15 +39,24 @@ const Footer = () => {
 
         <div className="flex flex-col w-[6rem]">
           <p>SOCIALS</p>
-          <Link href="x.com" className="flex items-center">
+          <Link
+            href="https://x.com"
+            className="flex items-center"
+            target="_blank"
+          >
             <FaXTwitter className="text-2xl mr-4" /> X
           </Link>
-          <Link href="github.com/mishdgr8" className="flex items-center ">
+          <Link
+            href="https://github.com/mishdgr8"
+            className="flex items-center "
+            target="_blank"
+          >
             <FaGithub className="text-2xl mr-4" /> Github
           </Link>
           <Link
             href="mailto: mishaelmordi@gmail.com"
             className="flex items-center "
+            target="_blank"
           >
             <FaEnvelope className="text-2xl mr-4" /> Email
           </Link>

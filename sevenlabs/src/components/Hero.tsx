@@ -1,8 +1,0 @@
-import Image from "next/image";
-
-import { Montserrat } from "next/font/google";
-import Trial from "./Trial";
-
-export default function Hero() {
-  return <Trial heading={" We turn ideas to "} />;
-}
