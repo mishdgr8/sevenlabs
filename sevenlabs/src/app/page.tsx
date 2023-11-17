@@ -12,10 +12,41 @@ import pantera from "@/../public/pantera.png";
 import sol from "@/../public/sol.png";
 import binance from "/../../Users/mishdgr8/Web Development/sevenlabs/sevenlabs/public/binance.svg";
 import { FaArrowRight } from "react-icons/fa6";
+import "@/styles/app.css";
 import { useEffect } from "react";
-import Trial from "@/components/trial";
 
 export default function Home() {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const scrollers = document.querySelectorAll(".scroller");
+
+      // If a user hasn't opted in for reduced motion, then we add the animation
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        addAnimation();
+      }
+
+      function addAnimation() {
+        scrollers.forEach((scroller) => {
+          // add data-animated="true" to every `.scroller` on the page
+          scroller.setAttribute("data-animated", true);
+
+          // Make an array from the elements within `.scroller-inner`
+          const scrollerInner = scroller.querySelector(".scroller__inner");
+          const scrollerContent = Array.from(scrollerInner.children);
+
+          // For each item in the array, clone it
+          // add aria-hidden to it
+          // add it into the `.scroller-inner`
+          scrollerContent.forEach((item) => {
+            const duplicatedItem = item.cloneNode(true);
+            duplicatedItem.setAttribute("aria-hidden", true);
+            scrollerInner.appendChild(duplicatedItem);
+          });
+        });
+      }
+    }
+  }, []);
+
   return (
     <main className="flex m flex-col items-center justify-between py-0 px-12 leading-7">
       <Hero />
@@ -39,27 +70,31 @@ export default function Home() {
         <h3>Our Clients and Partners</h3>
       </div>
       <div
-        className="flex flex-grow w-screen overflow-hidden relative h-[100px] justify-center items-center gap-[2rem] mt-6 mb-10"
-        style={{ animation: "scroll 20s linear infinite" }}
+        className="mt-2 mb-2 scroller"
+        data-direction="right"
+        data-speed="slow"
       >
-        <Image src={a16z} className="w-80 h-[4rem]" alt={""} />
-
-        <Image src={pantera} className="w-80 h-auto" alt={""} />
-        <Image src={op} className="w-80 h-auto" alt={""} />
-        <Image src={binance} className="w-80 h-auto" alt={""} />
-        <Image src={arb} className="w-80 h-auto" alt={""} />
-        <Image src={sol} className="w-80 h-auto" alt={""} />
+        <div
+          className="scroller__inner
+        "
+        >
+          <Image src={pantera} className="w-60  h-auto" alt={""} />
+          <Image src={op} className="w-60 h-auto" alt={""} />
+          <Image src={binance} className="w-60 h-auto" alt={""} />
+          <Image src={arb} className="w-60 h-auto" alt={""} />
+          <Image src={sol} className="w-60 h-auto" alt={""} />
+          <Image src={a16z} className="w-60 h-[4rem]" alt={""} />
+        </div>
       </div>
-      <div></div>
 
-      <div className="flex flex-col m-10 items-center justify-center  font-extrabold">
+      <div className="flex flex-col m-5 items-center justify-center  font-extrabold">
         <h3 className="text-4xl">Our team doesn't just build,</h3>
 
         <h3 className="gradient-text text-3xl">we co-create</h3>
       </div>
       <div
         className="text-center font-extrabold
-      text-7xl mt-48 mb-4  items-center justify-between "
+      text-7xl mt-10 mb-4  items-center justify-between "
       >
         <h2>Fuel your innovation</h2>
       </div>

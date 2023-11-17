@@ -1,4 +1,4 @@
-import Trial from "@/components/trial";
+import Trial from "@/components/Trial";
 
 // Your component logic here
 export default function Page() {
@@ -6,7 +6,7 @@ export default function Page() {
     <main className="flex flex-col items-center max-h-screen mb-6 ">
       <div className="  text-center justify-between py-0 px-12 leading-7">
         <div>
-          <Trial heading={"Join our team"} tail={undefined} />
+          <Trial heading={"Join our team"} />
           <p className="mt-8">
             Join us to elevate your craft while building the platforms{" "}
           </p>

@@ -1,10 +1,8 @@
 import Image from "next/image";
 
 import { Montserrat } from "next/font/google";
-import Trial from "./trial";
+import Trial from "./Trial";
 
 export default function Hero() {
-  return (
-    <Trial heading={" We turn ideas to "} tail={" great Solana products"} />
-  );
+  return <Trial heading={" We turn ideas to "} />;
 }

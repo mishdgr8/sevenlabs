@@ -9,12 +9,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  /* :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  } */
-
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-hsl: 240, 5%, 5%; /* Dark bluish */
@@ -29,16 +23,6 @@
   -webkit-background-clip: text;
   color: transparent;
 }
-
-/* body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
 
 body {
   background: linear-gradient(
