@@ -89,7 +89,18 @@ export default function Home() {
 
   return (
     <main className="flex  flex-col items-center justify-between py-0 px-12 leading-7">
-      <Trial text={" We turn ideas to "} />;
+      <Trial
+        text={" We turn ideas to "}
+        solana={
+          <span>
+            GREAT <span className="gradient-text">SOLANA</span> PRODUCTS
+          </span>
+        }
+      />
+      <div className="w-full">
+        <hr></hr>
+      </div>
+
       <p className="mt-8">
         We work with passionate innovators on the Solana blockchain,
       </p>

@@ -14,7 +14,7 @@ const quote = {
   },
 };
 
-const Trial = ({ text }): React.JSX.Element => {
+const Trial = ({ text, solana }): React.JSX.Element => {
   return (
     <div className="w-full">
       <div className="flex w-full h-fit flex-col items-center justify-between py-0 px-12 ">
@@ -28,13 +28,8 @@ const Trial = ({ text }): React.JSX.Element => {
           <motion.p variants={quote} initial="initial" animate="animate">
             {text}
           </motion.p>
-          <p>
-            GREAT <span className="gradient-text">SOLANA</span> PRODUCTS
-          </p>
+          <p>{solana}</p>
         </motion.div>
-      </div>
-      <div className="w-full">
-        <hr></hr>
       </div>
     </div>
   );
