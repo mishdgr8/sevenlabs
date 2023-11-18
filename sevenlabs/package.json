@@ -10,12 +10,12 @@
   },
   "dependencies": {
     "framer-motion": "^10.16.4",
-    "next": "14.0.2",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0"
   },
   "devDependencies": {
+    "next": "14.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
