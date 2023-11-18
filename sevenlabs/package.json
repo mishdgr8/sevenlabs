@@ -12,10 +12,11 @@
     "framer-motion": "^10.16.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^4.12.0"
+    "react-icons": "^4.12.0",
+    "next": "14.0.2",
+    "vercel": "32.5.5"
   },
   "devDependencies": {
-    "next": "14.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

@@ -1,7 +1,6 @@
 "use client";
-
 import Image from "next/image";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import Trial from "../components/Trial";
 import a16z from "@/../public/a16z.png";
 import arb from "@/../public/arb.png";
@@ -10,54 +9,8 @@ import pantera from "@/../public/pantera.png";
 import sol from "@/../public/sol.png";
 import binance from "/../../Users/mishdgr8/Web Development/sevenlabs/sevenlabs/public/binance.svg";
 import { FaArrowRight } from "react-icons/fa6";
-import "@/styles/app.css";
-import { ReactNode, useEffect } from "react";
-
-interface UnravelSectionProps {
-  children: ReactNode;
-}
-
-const UnravelSection = ({ children }: UnravelSectionProps) => {
-  const controls = useAnimation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      const windowHeight = window.innerHeight;
-
-      // Adjust the threshold as needed
-      const threshold = windowHeight * 0.08;
-
-      // Check if the section is in view
-      if (scrollY > threshold) {
-        controls.start({ opacity: 1, y: 0 });
-      } else {
-        controls.start({ opacity: 0.5, y: 100 });
-      }
-    };
-
-    // Attach the scroll event listener
-    window.addEventListener("scroll", handleScroll);
-
-    // Trigger the initial animation check
-    handleScroll();
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [controls]);
-
-  return (
-    <motion.div
-      className=" flex flex-col w-full items-center justify-between "
-      initial={{ opacity: 0.5, y: 100 }}
-      animate={controls}
-    >
-      {children}
-    </motion.div>
-  );
-};
+import { useEffect } from "react";
+import { UnravelSection } from "./page";
 
 export default function Home() {
   useEffect(() => {
