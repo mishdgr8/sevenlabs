@@ -21,8 +21,7 @@ const Footer = () => {
           <p>companies that truly care about quality.</p>
           <div className="mt-4">
             <button
-              className=" bg-transparent text-white 
-         px-4 py-0 rounded-[20px] flex items-center border border-solid-1"
+              className="bg-transparent text-white px-4 py-1 rounded-[20px] flex items-center border border-white hover:bg-white hover:text-gray-900 transition-colors"
             >
               Book a Call
               <FaArrowRight className="ml-[2px]" />

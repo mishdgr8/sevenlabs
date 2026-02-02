@@ -3,8 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { Montserrat } from "next/font/google";
 import { FaArrowRight } from "react-icons/fa6";
 
 const Navbar = () => {

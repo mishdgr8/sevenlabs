@@ -8,7 +8,7 @@ import arb from "@/../public/arb.png";
 import op from "@/../public/op.png";
 import pantera from "@/../public/pantera.png";
 import sol from "@/../public/sol.png";
-import binance from "/../../Users/mishdgr8/Web Development/sevenlabs/sevenlabs/public/binance.svg";
+import binance from "@/../public/binance.svg";
 import { FaArrowRight } from "react-icons/fa6";
 import "@/styles/app.css";
 import { ReactNode, useEffect } from "react";
@@ -64,29 +64,30 @@ export default function Home() {
     if (typeof window !== "undefined") {
       const scrollers = document.querySelectorAll(".scroller");
 
-      // If a user hasn't opted in for reduced motion, then we add the animation
-      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        addAnimation();
-      }
-
-      function addAnimation() {
+      const addAnimation = () => {
         scrollers.forEach((scroller) => {
           // add data-animated="true" to every `.scroller` on the page
-          scroller.setAttribute("data-animated", true);
+          scroller.setAttribute("data-animated", "true");
 
           // Make an array from the elements within `.scroller-inner`
           const scrollerInner = scroller.querySelector(".scroller__inner");
+          if (!scrollerInner) return;
           const scrollerContent = Array.from(scrollerInner.children);
 
           // For each item in the array, clone it
           // add aria-hidden to it
           // add it into the `.scroller-inner`
           scrollerContent.forEach((item) => {
-            const duplicatedItem = item.cloneNode(true);
-            duplicatedItem.setAttribute("aria-hidden", true);
+            const duplicatedItem = item.cloneNode(true) as Element;
+            duplicatedItem.setAttribute("aria-hidden", "true");
             scrollerInner.appendChild(duplicatedItem);
           });
         });
+      };
+
+      // If a user hasn't opted in for reduced motion, then we add the animation
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        addAnimation();
       }
     }
   }, []);
@@ -121,7 +122,7 @@ export default function Home() {
           <FaArrowRight className="ml-[2px]" />
         </motion.button>
         <motion.button
-          className="border text-sm text-white px-8 py-2 my-2 mx-2 rounded-[20px]"
+          className="border border-white text-sm text-white px-8 py-2 my-2 mx-2 rounded-[20px]"
           whileTap={{ scale: 0.9 }}
         >
           Learn More
@@ -146,7 +147,7 @@ export default function Home() {
       </div>
       <UnravelSection>
         <div className="flex flex-col m-5 items-center justify-center  font-extrabold">
-          <h3 className="text-4xl">Our team doesn't just build,</h3>
+          <h3 className="text-4xl">Our team doesn&apos;t just build,</h3>
 
           <h3 className="gradient-text text-3xl">we co-create</h3>
         </div>
@@ -176,7 +177,7 @@ export default function Home() {
           </motion.button>
           <motion.button
             whileTap={{ scale: 0.9 }}
-            className="border text-sm text-white px-8 py-2 my-2 mx-2 rounded-[20px]"
+            className="border border-white text-sm text-white px-8 py-2 my-2 mx-2 rounded-[20px]"
           >
             Learn More
           </motion.button>

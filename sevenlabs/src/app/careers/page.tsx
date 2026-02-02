@@ -17,7 +17,7 @@ export default function Page() {
           <p className="mt-8">
             Join us to elevate your craft while building the platforms{" "}
           </p>
-          <p>that define tomorrow's Solana landscape.</p>
+          <p>that define tomorrow&apos;s Solana landscape.</p>
         </div>
 
         <div className="my-6 text-2xl font-extrabold">
@@ -26,11 +26,10 @@ export default function Page() {
       </div>
       <a href="https://olcbqq2xzck.typeform.com/to/OtyyoFIN" target="_blank">
         <motion.div
-          className=" card flex items-center justify-center border
-       border-solid rounded-[20px]   max-w-fit"
+          className="card flex items-center justify-center border border-white/30 rounded-[20px] max-w-fit"
           whileHover={{ scale: 0.99 }}
         >
-          <div className="flex flex-col w-[28rem] h-auto bg-dark p-6 text-white ">
+          <div className="flex flex-col w-[28rem] h-auto bg-gray-800/50 p-6 text-white ">
             <h3 className="text-xl font-bold pb-2">Full Stack Developer</h3>
             <p className="">
               As a Full Stack Developer at SevenLabs, you will be working with
@@ -55,10 +54,9 @@ export default function Page() {
         <h3>Non-technical Roles</h3>
       </div>
       <div
-        className=" card flex items-start justify-center border
-       border-solid rounded-[20px]   max-w-fit mb-24"
+        className="card flex items-start justify-center border border-white/30 rounded-[20px] max-w-fit mb-24"
       >
-        <div className="flex flex-col w-[28rem] h-auto bg-dark p-6 text-white ">
+        <div className="flex flex-col w-[28rem] h-auto bg-gray-800/50 p-6 text-white ">
           <p className="">
             We don’t have any non-technical position open as of now - if you’d
             be interested in joining us, check us out later this year.

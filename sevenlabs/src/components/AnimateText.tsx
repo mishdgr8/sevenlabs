@@ -1,6 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { createContext } from "react";
+
+interface AnimateTextProps {
+  text: string;
+  className?: string;
+}
+
 const quote = {
   initial: {
     opacity: 0,
@@ -28,7 +33,7 @@ const singleWord = {
   },
 };
 
-const AnimateText = ({ text, className }) => {
+const AnimateText = ({ text, className }: AnimateTextProps) => {
   return (
     <div
       className="w-auto py-2 mx-auto items-center justify center text-center

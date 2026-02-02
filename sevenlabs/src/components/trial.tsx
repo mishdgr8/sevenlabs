@@ -2,6 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
+interface TrialProps {
+  text: string;
+  solana: ReactNode;
+}
+
 const quote = {
   initial: {
     opacity: 0,
@@ -15,7 +20,7 @@ const quote = {
   },
 };
 
-const Trial = ({ text, solana }): React.JSX.Element => {
+const Trial = ({ text, solana }: TrialProps): React.JSX.Element => {
   return (
     <div className="w-full">
       <div className="flex w-full h-fit flex-col items-center justify-between py-0 px-12 ">

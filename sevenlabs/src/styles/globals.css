@@ -3,24 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-hsl: 240, 5%, 5%; /* Dark bluish */
+  --background-end-hsl: 210, 30%, 15%; /* Lighter bluish */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-hsl: 240, 5%, 5%; /* Dark bluish */
-    --background-end-hsl: 210, 30%, 15%; /* Lighter bluish */
-  }
-}
 .card {
   background: rgba(255, 255, 255, 0.08);
 }
+
 .gradient-text {
   background: linear-gradient(to right, purple, violet, skyblue);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -31,4 +26,14 @@ body {
     hsl(var(--background-end-hsl))
   );
   color: rgb(var(--foreground-rgb));
+}
+
+/* Ensure partner logos are visible on dark background */
+.scroller__inner img {
+  filter: brightness(0) invert(1);
+}
+
+/* Ensure sufficient contrast for all text */
+hr {
+  border-color: rgba(255, 255, 255, 0.2);
 }
