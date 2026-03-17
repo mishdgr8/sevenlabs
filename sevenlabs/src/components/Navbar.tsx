@@ -2,33 +2,38 @@
 
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { FaArrowRight } from "react-icons/fa6";
 
 const Navbar = () => {
   return (
-    <nav className="w-full card  px-[6rem] py-4 flex justify-between items-center">
-      <Link className="  font-bold text-2xl" href="/">
-        SEVEN<span className=" inline-block transform rotate-180">7</span>ABS
-      </Link>
-
-      <div className=" flex items-center space-x-4 text-sm">
-        <div className="space-x-4">
-          <Link href="/careers" className="text-white">
-            Careers
+    <nav className="w-full bg-white border-b border-neutral-200 sticky top-0 z-[100]">
+      <div className="container-editorial py-6 flex justify-between items-center">
+        <div className="flex items-center">
+          <Link className="font-bold text-xl md:text-2xl tracking-tight-premium text-black uppercase" href="/">
+            SevenLabs
           </Link>
         </div>
-        <motion.button
-          className="bg-green-500 text-white 
-         px-4 py-0 rounded-[20px] flex items-center"
-          whileTap={{ scale: 0.9 }}
-        >
-          Book a Call
-          <FaArrowRight className="ml-[2px]" />
-        </motion.button>
+
+        <div className="hidden md:flex items-center space-x-8 lg:space-x-12 text-[10px] font-bold uppercase tracking-widest text-neutral-500">
+          <Link href="/#about" className="hover:text-black transition-colors duration-300">
+            About
+          </Link>
+          <Link href="/products" className="hover:text-black transition-colors duration-300">
+            Services
+          </Link>
+          <Link href="/careers" className="hover:text-black transition-colors duration-300">
+            Careers
+          </Link>
+          <Link href="/#latest" className="hover:text-black transition-colors duration-300">
+            Latest
+          </Link>
+          <Link href="/#contact" className="hover:text-black transition-colors duration-300">
+            Contact
+          </Link>
+        </div>
       </div>
     </nav>
   );
 };
 
 export default Navbar;
+

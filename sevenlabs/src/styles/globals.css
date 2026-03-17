@@ -2,38 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-hsl: 240, 5%, 5%; /* Dark bluish */
-  --background-end-hsl: 210, 30%, 15%; /* Lighter bluish */
+@layer base {
+  :root {
+    --bg-primary: #ffffff;
+    --text-primary: #000000;
+    --text-secondary: #717171;
+    --border-neutral: #eeeeee;
+  }
+
+  body {
+    @apply bg-white text-black antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.4;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight-premium uppercase;
+  }
 }
 
-.card {
-  background: rgba(255, 255, 255, 0.08);
+@layer components {
+  .container-editorial {
+    @apply max-w-[1720px] mx-auto px-6 md:px-12 lg:px-20;
+  }
+
+  .line-divider {
+    @apply w-full h-[1px] bg-neutral-200 my-12;
+  }
+
+  .btn-premium {
+    @apply px-8 py-3 bg-black text-white rounded-full font-bold text-[10px] uppercase tracking-widest-premium transition-all hover:bg-neutral-800 active:scale-95 flex items-center gap-2;
+  }
+
+  .btn-premium-outline {
+    @apply px-8 py-3 border border-black text-black rounded-full font-bold text-[10px] uppercase tracking-widest-premium transition-all hover:bg-black hover:text-white active:scale-95 flex items-center gap-2;
+  }
 }
 
-.gradient-text {
-  background: linear-gradient(to right, purple, violet, skyblue);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+@layer utilities {
+  .tracking-tight-premium {
+    letter-spacing: -0.075em;
+  }
+
+  .tracking-widest-premium {
+    letter-spacing: 0.4em;
+  }
 }
 
-body {
-  background: linear-gradient(
-    to right,
-    hsl(var(--background-start-hsl)),
-    hsl(var(--background-end-hsl))
-  );
-  color: rgb(var(--foreground-rgb));
+/* Custom Scrollbar to be very subtle */
+::-webkit-scrollbar {
+  width: 3px;
 }
 
-/* Ensure partner logos are visible on dark background */
-.scroller__inner img {
-  filter: brightness(0) invert(1);
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-/* Ensure sufficient contrast for all text */
-hr {
-  border-color: rgba(255, 255, 255, 0.2);
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-black text-white;
 }

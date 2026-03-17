@@ -1,42 +1,38 @@
-import React from "react";
-import { motion } from "framer-motion";
+"use client";
+
+import React, { useRef } from "react";
 import { ReactNode } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
 interface TrialProps {
   text: string;
   solana: ReactNode;
 }
 
-const quote = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      delay: 0.5,
-      staggerChildren: 0.1,
-    },
-  },
-};
-
 const Trial = ({ text, solana }: TrialProps): React.JSX.Element => {
+  const trialRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.from(".trial-line", {
+      y: "100%",
+      opacity: 0,
+      duration: 1.5,
+      stagger: 0.3,
+      ease: "power4.out",
+    });
+  }, { scope: trialRef });
+
   return (
-    <div className="w-full">
-      <div className="flex w-full h-fit flex-col items-center justify-between py-0 px-12 ">
-        <motion.div
-          className="text-center font-extrabold
-      text-6xl mt-48 mb-8  items-center justify-between uppercase leading-[4rem]"
-          variants={quote}
-          initial="initial"
-          animate="animate"
-        >
-          <motion.p variants={quote} initial="initial" animate="animate">
-            {text}
-          </motion.p>
-          <p>{solana}</p>
-        </motion.div>
-      </div>
+    <div ref={trialRef} className="w-full flex flex-col items-center justify-center">
+      <h1 className="text-center font-bold text-6xl md:text-8xl leading-none tracking-tighter">
+        <div className="overflow-hidden py-2">
+           <div className="trial-line">{text}</div>
+        </div>
+        <div className="overflow-hidden py-2">
+           <div className="trial-line">{solana}</div>
+        </div>
+      </h1>
     </div>
   );
 };

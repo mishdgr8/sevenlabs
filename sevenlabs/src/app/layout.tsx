@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
 import Navbar from "../components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from "../components/Footer";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SevenLabs Redo",
-  description: "lets call this my application",
+  title: "SevenLabs | Technical Production Studio",
+  description: "Architecting high-performance primitives for the Solana ecosystem.",
 };
 
 export default function RootLayout({
@@ -19,10 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <hr />
         {children}
         <Footer />
       </body>
     </html>
   );
 }
+
