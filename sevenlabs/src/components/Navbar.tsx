@@ -10,8 +10,10 @@ const Navbar = () => {
         <div className="flex items-center">
           <Link className="font-bold text-xl md:text-2xl tracking-tight-premium text-black uppercase group flex items-center" href="/">
             SEVEN
-            <span className="inline-block rotate-180 group-hover:rotate-0 transition-transform duration-500 ease-[cubic-bezier(0.6,0.01,-0.05,0.95)] text-blue-600 origin-center ml-[1px]">
-              7
+            <span className="inline-flex w-[1ch] justify-center text-blue-600 ml-1">
+              <span className="inline-block transition-transform duration-700 ease-[cubic-bezier(0.6,0.01,-0.05,0.95)] rotate-180 group-hover:rotate-0">
+                7
+              </span>
             </span>
             ABS
           </Link>

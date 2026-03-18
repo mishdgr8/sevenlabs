@@ -2,7 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ArrowDown, Instagram, Linkedin, ArrowUp } from "lucide-react";
+import {
+   ArrowUpRight, ArrowDown, Instagram, Linkedin, ArrowUp,
+   Code, Database, Terminal, Cloud, Github
+} from "lucide-react";
 import Link from "next/link";
 import React, { useRef } from "react";
 
@@ -28,6 +31,39 @@ const stagger = {
       }
    }
 };
+
+const capabilities = [
+   {
+      num: "01",
+      title: "Programs",
+      desc: "Smart contract development. Compute-optimized, security-first, built with the right patterns for production and compliance.",
+      icon: <Code size={20} />
+   },
+   {
+      num: "02",
+      title: "Indexing",
+      desc: "Custom indexer infrastructure. Real-time and historical data, high availability, built to scale.",
+      icon: <Database size={20} />
+   },
+   {
+      num: "03",
+      title: "Rust Backends",
+      desc: "High-performance APIs in Rust. High throughput for demanding workloads.",
+      icon: <Terminal size={20} />
+   },
+   {
+      num: "04",
+      title: "Infrastructure",
+      desc: "Optimized for high-throughput transaction sending and low-latency chain data access.",
+      icon: <Cloud size={20} />
+   }
+];
+
+const latestArticles = [
+   { num: "01", title: "High-Performance Blockchain Patterns" },
+   { num: "02", title: "Optimizing SVM for Mass Transaction Throughput" },
+   { num: "03", title: "Carbon: The Future of Modular Indexing" }
+];
 
 export default function Home() {
    return (
@@ -55,8 +91,10 @@ export default function Home() {
                         </span>
                         <h1 className="text-7xl md:text-[11rem] font-bold leading-[0.8] tracking-tight-premium uppercase mb-8 group cursor-default w-fit">
                            SEVEN <br />
-                           <span className="inline-block rotate-180 group-hover:rotate-0 transition-transform duration-700 ease-[cubic-bezier(0.6,0.01,-0.05,0.95)] text-blue-600 origin-center">
-                              7
+                           <span className="inline-flex w-[1ch] justify-center text-blue-600">
+                              <span className="inline-block transition-transform duration-1000 ease-[cubic-bezier(0.6,0.01,-0.05,0.95)] rotate-180 group-hover:rotate-0">
+                                 7
+                              </span>
                            </span>
                            ABS<span className="text-blue-600">.</span>
                         </h1>
@@ -131,7 +169,41 @@ export default function Home() {
             </div>
          </section>
 
-         {/* 02. LATEST SECTION */}
+         {/* 02. WHAT WE DO SECTION */}
+         <section className="py-24 bg-black text-white relative overflow-hidden">
+            <div className="container-editorial relative z-10">
+               <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20">
+                  <div className="max-w-xl">
+                     <span className="text-[10px] font-bold uppercase tracking-widest-premium text-neutral-500 mb-6 block">What We Do</span>
+                     <h2 className="text-5xl md:text-7xl font-bold uppercase tracking-tight-premium leading-[0.9] mb-8">
+                        Engineering with <br /> conviction
+                     </h2>
+                  </div>
+                  <p className="text-lg text-neutral-400 font-medium max-w-sm mb-4 leading-relaxed tracking-tight">
+                     From Solana programs to high-performance infrastructure. We build systems that don&apos;t break.
+                  </p>
+               </div>
+
+               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-800 border border-neutral-800">
+                  {capabilities.map((item) => (
+                     <div key={item.num} className="bg-black p-10 hover:bg-neutral-900 transition-colors duration-500 group">
+                        <div className="flex justify-between items-start mb-12">
+                           <span className="text-[10px] font-bold text-neutral-500">{item.num} —</span>
+                           <div className="text-neutral-500 group-hover:text-blue-600 transition-colors">
+                              {item.icon}
+                           </div>
+                        </div>
+                        <h3 className="text-2xl font-bold uppercase tracking-tight-premium mb-6">{item.title}</h3>
+                        <p className="text-sm text-neutral-500 leading-relaxed font-medium">
+                           {item.desc}
+                        </p>
+                     </div>
+                  ))}
+               </div>
+            </div>
+         </section>
+
+         {/* 03. LATEST SECTION */}
          <section id="latest" className="py-12 md:py-16 relative z-10 bg-white">
             <div className="container-editorial">
                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 border-b border-neutral-100 pb-6">
@@ -165,9 +237,9 @@ export default function Home() {
                   </motion.div>
 
                   <div className="flex flex-col justify-end">
-                     {[1, 2, 3].map((i) => (
+                     {latestArticles.map((article) => (
                         <motion.div
-                           key={i}
+                           key={article.num}
                            variants={fadeInUp}
                            initial="initial"
                            whileInView="animate"
@@ -175,8 +247,8 @@ export default function Home() {
                            className="group py-8 border-t border-neutral-100 flex justify-between items-center cursor-pointer hover:px-4 transition-all"
                         >
                            <div className="space-y-1">
-                              <span className="text-[10px] font-bold text-neutral-300 group-hover:text-black transition-colors">0{i}</span>
-                              <h4 className="text-xl font-bold uppercase tracking-tight-premium">High-performance blockchain patterns</h4>
+                              <span className="text-[10px] font-bold text-neutral-300 group-hover:text-black transition-colors">{article.num}</span>
+                              <h4 className="text-xl font-bold uppercase tracking-tight-premium">{article.title}</h4>
                            </div>
                            <ArrowUpRight size={20} className="text-neutral-300 group-hover:text-black transition-colors" />
                         </motion.div>
@@ -236,7 +308,60 @@ export default function Home() {
             </div>
          </section>
 
-         {/* 04. CONTACT SECTION */}
+         {/* 05. OPEN SOURCE SECTION */}
+         <section className="py-24 bg-neutral-50 border-y border-neutral-100 relative z-10">
+            <div className="container-editorial">
+               <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
+                  <div className="max-w-xl">
+                     <span className="text-[10px] font-bold uppercase tracking-widest-premium text-neutral-400 mb-6 block">Open Source</span>
+                     <h2 className="text-5xl md:text-7xl font-bold uppercase tracking-tight-premium leading-[0.9]">
+                        We build the tools <br /> Solana is missing
+                     </h2>
+                  </div>
+                  <p className="text-lg text-neutral-500 font-medium max-w-sm mb-4 leading-relaxed tracking-tight">
+                     Built in production. Open-sourced for the ecosystem.
+                  </p>
+               </div>
+
+               <div className="bg-black text-white p-8 md:p-16 rounded-sm grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                  <div className="lg:col-span-6">
+                     <h3 className="text-5xl font-bold uppercase tracking-tight-premium mb-8">Carbon</h3>
+                     <p className="text-xl text-neutral-400 font-medium tracking-tight leading-relaxed mb-12">
+                        A lightweight indexing framework for Solana. Modular pipelines for sourcing, decoding, and processing on-chain data at any scale.
+                     </p>
+                     <button className="btn-premium border-white text-white hover:bg-white hover:text-black">
+                        View on GitHub
+                        <Github size={18} />
+                     </button>
+                  </div>
+
+                  <div className="lg:col-span-6 flex flex-col gap-6">
+                     {[
+                        { label: "Source", sub: "RPC, gRPC, Jetstreamer", icon: <Database size={16} /> },
+                        { label: "Decode", sub: "Anchor, Codama", icon: <Code size={16} /> },
+                        { label: "Process", sub: "Transform, Store, Stream", icon: <Terminal size={16} /> }
+                     ].map((step, idx, arr) => (
+                        <React.Fragment key={step.label}>
+                           <div className="flex items-center gap-6 p-6 border border-neutral-800 bg-neutral-900/50 hover:border-blue-600 transition-colors group">
+                              <div className="w-10 h-10 bg-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-blue-600 transition-colors">
+                                 {step.icon}
+                              </div>
+                              <div>
+                                 <h4 className="font-bold uppercase tracking-tight-premium text-sm">{step.label}</h4>
+                                 <p className="text-[10px] uppercase tracking-widest-premium text-neutral-500 font-bold">{step.sub}</p>
+                              </div>
+                           </div>
+                           {idx < arr.length - 1 && (
+                              <div className="w-px h-6 bg-neutral-800 ml-11"></div>
+                           )}
+                        </React.Fragment>
+                     ))}
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         {/* 06. CONTACT SECTION */}
          <section id="contact" className="py-20 relative z-10 bg-white overflow-hidden">
             <div className="container-editorial">
                <div className="flex flex-col md:flex-row justify-between items-center gap-16 mb-20">
