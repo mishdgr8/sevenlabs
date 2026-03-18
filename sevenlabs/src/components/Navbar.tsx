@@ -8,8 +8,12 @@ const Navbar = () => {
     <nav className="w-full bg-white border-b border-neutral-200 sticky top-0 z-[100]">
       <div className="container-editorial py-6 flex justify-between items-center">
         <div className="flex items-center">
-          <Link className="font-bold text-xl md:text-2xl tracking-tight-premium text-black uppercase" href="/">
-            SevenLabs
+          <Link className="font-bold text-xl md:text-2xl tracking-tight-premium text-black uppercase group flex items-center" href="/">
+            SEVEN
+            <span className="inline-block rotate-180 group-hover:rotate-0 transition-transform duration-500 ease-[cubic-bezier(0.6,0.01,-0.05,0.95)] text-blue-600 origin-center ml-[1px]">
+              7
+            </span>
+            ABS
           </Link>
         </div>
 

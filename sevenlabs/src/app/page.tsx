@@ -53,8 +53,12 @@ export default function Home() {
                            <span className="inline-block w-2 h-2 bg-blue-600 rounded-full mr-2 animate-pulse"></span>
                            The Studio / 2026
                         </span>
-                        <h1 className="text-7xl md:text-[11rem] font-bold leading-[0.8] tracking-tight-premium uppercase mb-8">
-                           SEVEN <br /> LABS<span className="text-blue-600">.</span>
+                        <h1 className="text-7xl md:text-[11rem] font-bold leading-[0.8] tracking-tight-premium uppercase mb-8 group cursor-default w-fit">
+                           SEVEN <br />
+                           <span className="inline-block rotate-180 group-hover:rotate-0 transition-transform duration-700 ease-[cubic-bezier(0.6,0.01,-0.05,0.95)] text-blue-600 origin-center">
+                              7
+                           </span>
+                           ABS<span className="text-blue-600">.</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-neutral-500 font-medium tracking-tight leading-tight max-w-2xl mb-12">
                            We work with passionate innovators on the Solana blockchain, engineering the bridge between <span className="text-black">visionary ideas</span> and <span className="text-black">market-ready products</span>.
@@ -186,8 +190,8 @@ export default function Home() {
          <section id="about" className="py-16 relative z-10 bg-neutral-50 border-y border-neutral-100">
             <div className="container-editorial">
                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                  <div className="lg:col-span-1 hidden lg:block h-full">
-                     <span className="rotate-[-90deg] inline-block text-[10px] font-bold uppercase tracking-widest-premium text-neutral-400 origin-center whitespace-nowrap translate-y-16">
+                  <div className="lg:col-span-1 hidden lg:block relative h-full min-h-[300px]">
+                     <span className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 -rotate-90 text-[10px] font-bold uppercase tracking-widest-premium text-neutral-400 whitespace-nowrap origin-center">
                         A PARTNER IN INNOVATION
                      </span>
                   </div>
