@@ -200,7 +200,7 @@ export default function Home() {
                         viewport={{ once: true }}
                         className="text-5xl md:text-6xl font-bold uppercase tracking-tight-premium leading-[0.85]"
                      >
-                        Our team doesn't <br /> just build: <br /> <span className="text-blue-600">We co-create.</span>
+                        Our team doesn&apos;t <br /> just build: <br /> <span className="text-blue-600">We co-create.</span>
                      </motion.h2>
                      <motion.p
                         variants={fadeInUp}

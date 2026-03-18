@@ -59,7 +59,7 @@ export default function CareersPage() {
             We are looking for engineers who dream in Rust and ship in production.
           </h2>
           <p className="text-xl text-neutral-500 font-medium tracking-tight leading-tight">
-            SevenLabs is a production studio. We don't just "research" - we build. Our culture is defined by industrial-grade execution and a relentless focus on performance.
+            SevenLabs is a production studio. We don&apos;t just &quot;research&quot; - we build. Our culture is defined by industrial-grade execution and a relentless focus on performance.
           </p>
         </div>
 
