@@ -10,24 +10,22 @@ import Link from "next/link";
 import React, { useRef } from "react";
 
 // New Assets
-import heroImg from "@/../public/hero.png";
-import servicesImg from "@/../public/services.png";
 import latestImg from "@/../public/latest.png";
 import aboutImg from "@/../public/about.png";
 
 import { GeometricPattern, TechnicalSVG } from "@/components/GeometricPattern";
-import { StudioAnimation, CircuitAnimation } from "@/components/StudioAnimations";
+import { StudioAnimation } from "@/components/StudioAnimations";
 
 const fadeInUp = {
-   initial: { y: 40, opacity: 0 },
+   initial: { y: 20, opacity: 0 },
    animate: { y: 0, opacity: 1 },
-   transition: { duration: 0.8, ease: [0.6, 0.01, -0.05, 0.95] }
+   transition: { duration: 0.6, ease: [0.6, 0.01, -0.05, 0.95] }
 };
 
 const stagger = {
    animate: {
       transition: {
-         staggerChildren: 0.1
+         staggerChildren: 0.05
       }
    }
 };
@@ -71,70 +69,73 @@ export default function Home() {
          <GeometricPattern className="absolute inset-0 z-0" />
 
          {/* 01. STUDIO HERO SECTION */}
-         <section id="hero" className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden z-10 border-b border-neutral-100 bg-white">
+         <section id="hero" className="relative h-[90vh] min-h-[600px] flex flex-col justify-center overflow-hidden z-20 border-b border-neutral-100 bg-white shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)]">
+            <h1 className="sr-only">SevenLabs — Technical Production Studio architecting high-performance primitives for Solana.</h1>
+
             {/* Animated Studio Background */}
             <div className="absolute inset-0 z-0 opacity-40">
                <StudioAnimation className="w-full h-full" />
             </div>
 
-            <div className="container-editorial relative z-10">
-               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                  <div className="lg:col-span-8">
-                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                     >
-                        <span className="text-[10px] font-bold uppercase tracking-widest-premium text-blue-600 mb-6 block">
-                           <span className="inline-block w-2 h-2 bg-blue-600 rounded-full mr-2 animate-pulse"></span>
-                           The Studio / 2026
-                        </span>
-                        <h1 className="text-7xl md:text-[11rem] font-bold leading-[0.8] tracking-tight-premium uppercase mb-8 group cursor-default w-fit">
-                           SEVEN <br />
-                           <span className="inline-flex w-[1ch] justify-center text-blue-600">
-                              <span className="inline-block transition-transform duration-1000 ease-[cubic-bezier(0.6,0.01,-0.05,0.95)] rotate-180 group-hover:rotate-0">
-                                 7
-                              </span>
-                           </span>
-                           ABS<span className="text-blue-600">.</span>
-                        </h1>
-                        <p className="text-xl md:text-2xl text-neutral-500 font-medium tracking-tight leading-tight max-w-2xl mb-12">
-                           We work with passionate innovators on the Solana blockchain, engineering the bridge between <span className="text-black">visionary ideas</span> and <span className="text-black">market-ready products</span>.
-                        </p>
-                        <div className="flex flex-wrap gap-4">
-                           <button className="btn-premium bg-blue-600 hover:bg-black text-white px-10 py-4">
-                              Start a Project
-                              <ArrowUpRight size={18} />
-                           </button>
-                           <button className="btn-premium-outline px-10 py-4">
-                              How we work
-                           </button>
-                        </div>
-                     </motion.div>
-                  </div>
-
-                  <div className="lg:col-span-4 hidden lg:block relative">
-                     <div className="aspect-square border border-neutral-100 bg-neutral-50 p-12 relative overflow-hidden group">
-                        <CircuitAnimation className="w-full h-full opacity-30" />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                           <div className="text-center p-8 bg-white/80 backdrop-blur-sm border border-neutral-100 shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-700">
-                              <p className="text-[10px] font-bold uppercase tracking-widest-premium text-black mb-2">Build Details</p>
-                              <div className="w-12 h-0.5 bg-blue-600 mx-auto mb-4"></div>
-                              <p className="font-mono text-[9px] text-neutral-400">STATUS: ACTIVE<br />LOCATED: DUBAI<br />ESTABLISHED: 2026</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+            {/* Top Left: SEVEN */}
+            <motion.div
+               initial={{ opacity: 0, x: -30 }}
+               animate={{ opacity: 1, x: 0 }}
+               transition={{ duration: 0.6, ease: "easeOut" }}
+               className="absolute top-8 left-4 md:left-8 lg:left-12 z-0 pointer-events-none"
+            >
+               <div className="text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[11rem] xl:text-[13rem] font-bold leading-[0.75] tracking-tight-premium uppercase group text-black">
+                  SEVEN
                </div>
+            </motion.div>
+
+            {/* Bottom Right: 7ABS */}
+            <motion.div
+               initial={{ opacity: 0, x: 30 }}
+               animate={{ opacity: 1, x: 0 }}
+               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+               className="absolute bottom-8 right-4 md:right-8 lg:right-12 z-0 pointer-events-none text-right"
+            >
+               <div className="text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[11rem] xl:text-[13rem] font-bold leading-[0.75] tracking-tight-premium uppercase group flex justify-end text-black">
+                  <span className="inline-flex w-[1ch] justify-center text-blue-600">
+                     <span className="inline-block transition-transform duration-1000 ease-[cubic-bezier(0.6,0.01,-0.05,0.95)] rotate-180 group-hover:rotate-0">
+                        7
+                     </span>
+                  </span>
+                  ABS<span className="text-blue-600">.</span>
+               </div>
+            </motion.div>
+
+            <div className="container-editorial relative z-10 flex flex-col items-center justify-center">
+               {/* Center: Content */}
+               <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+                  className="flex flex-col items-center text-center max-w-3xl bg-white/20 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.04)] rounded-3xl p-6 md:p-10 z-20"
+               >
+                  <p className="text-[clamp(1.1rem,1.8vw,1.75rem)] text-neutral-600 font-medium tracking-tight leading-relaxed mb-8">
+                     We work with passionate innovators on the Solana blockchain, engineering the bridge between <span className="text-black font-bold">visionary ideas</span> and <span className="text-black font-bold">market-ready products</span>.
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-4">
+                     <button className="btn-premium bg-blue-600 hover:bg-black text-white px-6 py-3 lg:px-8 lg:py-4 text-xs tracking-wider pointer-events-auto">
+                        Start a Project
+                        <ArrowUpRight size={18} />
+                     </button>
+                     <button className="btn-premium-outline text-black border-black/10 px-6 py-3 lg:px-8 lg:py-4 text-xs tracking-wider pointer-events-auto bg-white/70 backdrop-blur-sm hover:bg-white/30 hover:backdrop-blur-md hover:border-black/20 hover:text-black transition-all">
+                        How we work
+                     </button>
+                  </div>
+               </motion.div>
             </div>
          </section>
 
          {/* PARTNERS CAROUSEL */}
-         <section className="py-12 bg-white border-b border-neutral-50 overflow-hidden relative">
-            <div className="container-editorial mb-8">
+         <section className="pt-12 pb-6 bg-white border-b border-neutral-50 overflow-hidden relative">
+            <div className="container-editorial mb-6">
                <span className="text-[10px] font-bold uppercase tracking-widest-premium text-neutral-400">Our Partners</span>
             </div>
-            <div className="flex whitespace-nowrap overflow-hidden py-4">
+            <div className="flex whitespace-nowrap overflow-hidden py-2">
                <motion.div
                   initial={{ x: 0 }}
                   animate={{ x: "-50%" }}
@@ -171,6 +172,15 @@ export default function Home() {
 
          {/* 02. WHAT WE DO SECTION */}
          <section className="py-24 bg-black text-white relative overflow-hidden">
+            {/* Cinematic God Ray (Angle 1: Optimized) */}
+            <div className="absolute top-[-50%] left-[-20%] right-0 bottom-[-20%] pointer-events-none z-0">
+               {/* Simplified Gradient Structure to improve GPU performance */}
+               <div className="absolute top-[20%] left-[20%] w-[60vw] h-[200vh] origin-top-left rotate-[35deg]">
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-blue-500/5 to-transparent blur-[80px]" />
+                  <div className="absolute top-0 left-[20%] w-[20%] h-full bg-gradient-to-b from-white/10 to-transparent blur-[20px] mix-blend-screen" />
+               </div>
+            </div>
+
             <div className="container-editorial relative z-10">
                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20">
                   <div className="max-w-xl">
@@ -230,7 +240,13 @@ export default function Home() {
                      className="group cursor-pointer"
                   >
                      <div className="aspect-[4/3] relative overflow-hidden mb-8 grayscale group-hover:grayscale-0 transition-all duration-700 rounded-sm">
-                        <Image src={latestImg} alt="Latest Article" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <Image
+                           src={latestImg}
+                           alt="Latest Article"
+                           fill
+                           sizes="(max-width: 1024px) 100vw, 50vw"
+                           className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
                      </div>
                      <h3 className="text-4xl font-bold uppercase tracking-tight-premium leading-tight mb-4">State Machines: The Future of Solana Systems</h3>
                      <p className="text-[10px] font-bold uppercase tracking-widest-premium text-neutral-400">Labs / March 2026</p>
@@ -297,7 +313,13 @@ export default function Home() {
                         transition={{ duration: 1.2 }}
                         className="aspect-[4/5] relative grayscale overflow-hidden rounded-sm"
                      >
-                        <Image src={aboutImg} alt="About Us" fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
+                        <Image
+                           src={aboutImg}
+                           alt="About Us"
+                           fill
+                           sizes="(max-width: 1024px) 100vw, 40vw"
+                           className="object-cover group-hover:scale-105 transition-transform duration-1000"
+                        />
                         <div className="absolute inset-0 bg-white/5 group-hover:bg-transparent transition-colors"></div>
                      </motion.div>
                      <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-white border border-neutral-200 p-8 flex items-center justify-center rounded-sm shadow-xl animate-pulse-slow">
@@ -323,8 +345,20 @@ export default function Home() {
                   </p>
                </div>
 
-               <div className="bg-black text-white p-8 md:p-16 rounded-sm grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                  <div className="lg:col-span-6">
+               <div className="bg-black text-white p-8 md:p-16 rounded-sm grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative overflow-hidden">
+                  {/* Premium Aurora / Deep Space Glow for uniqueness */}
+                  <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden rounded-sm">
+                     {/* Massive backdrop glow */}
+                     <div className="absolute top-[-50%] right-[-50%] w-[200%] h-[200%] bg-blue-900/20 blur-[120px] rounded-full" />
+
+                     {/* Sweeping cyan aurora */}
+                     <div className="absolute top-[-20%] right-[-10%] w-[120%] h-[80%] bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent blur-[60px] transform -rotate-[25deg] mix-blend-screen rounded-full" />
+
+                     {/* Deep indigo contrast */}
+                     <div className="absolute bottom-[-20%] left-[-10%] w-[100%] h-[60%] bg-gradient-to-r from-indigo-500/10 via-blue-600/5 to-transparent blur-[80px] transform rotate-[15deg] mix-blend-screen rounded-full" />
+                  </div>
+
+                  <div className="lg:col-span-6 relative z-10">
                      <h3 className="text-5xl font-bold uppercase tracking-tight-premium mb-8">Carbon</h3>
                      <p className="text-xl text-neutral-400 font-medium tracking-tight leading-relaxed mb-12">
                         A lightweight indexing framework for Solana. Modular pipelines for sourcing, decoding, and processing on-chain data at any scale.
@@ -335,7 +369,7 @@ export default function Home() {
                      </button>
                   </div>
 
-                  <div className="lg:col-span-6 flex flex-col gap-6">
+                  <div className="lg:col-span-6 flex flex-col gap-6 relative z-10">
                      {[
                         { label: "Source", sub: "RPC, gRPC, Jetstreamer", icon: <Database size={16} /> },
                         { label: "Decode", sub: "Anchor, Codama", icon: <Code size={16} /> },
@@ -362,9 +396,9 @@ export default function Home() {
          </section>
 
          {/* 06. CONTACT SECTION */}
-         <section id="contact" className="py-20 relative z-10 bg-white overflow-hidden">
+         <section id="contact" className="py-12 lg:py-16 relative z-10 bg-white overflow-hidden">
             <div className="container-editorial">
-               <div className="flex flex-col md:flex-row justify-between items-center gap-16 mb-20">
+               <div className="flex flex-col md:flex-row justify-between items-center gap-12 lg:gap-16 mb-10">
                   <div className="max-w-xl">
                      <h2 className="text-5xl md:text-6xl font-bold uppercase tracking-tight-premium leading-[0.9] mb-6">
                         Bespoke engineering <br /> for founders.

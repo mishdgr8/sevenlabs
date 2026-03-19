@@ -11,14 +11,14 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-white pt-32 pb-20 overflow-hidden border-t border-neutral-100">
+    <footer className="bg-white pt-10 pb-16 overflow-hidden border-t border-neutral-100">
       <div className="container-editorial">
         {/* Scrolling Marquee */}
-        <div className="whitespace-nowrap flex items-center gap-12 mb-32 select-none overflow-hidden h-40 md:h-64">
+        <div className="whitespace-nowrap flex items-center gap-12 mb-16 select-none overflow-hidden h-24 md:h-32">
           <motion.h2
             animate={{ x: [0, -1000] }}
             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="text-[12rem] md:text-[20rem] font-bold leading-none tracking-tight-premium uppercase opacity-5"
+            className="text-[6rem] md:text-[10rem] font-bold leading-none tracking-tight-premium uppercase opacity-5"
           >
             CONTACT US — CONTACT US — CONTACT US — CONTACT US —
           </motion.h2>
@@ -66,7 +66,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-32 pt-12 border-t border-neutral-100 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="mt-16 pt-8 border-t border-neutral-100 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-[10px] font-bold uppercase tracking-widest-premium text-neutral-400">
             © 2026 SevenLabs — Technical Production Studio
           </div>
