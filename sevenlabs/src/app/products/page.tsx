@@ -8,7 +8,7 @@ import Link from "next/link";
 const fadeInUp = {
   initial: { y: 40, opacity: 0 },
   animate: { y: 0, opacity: 1 },
-  transition: { duration: 0.8, ease: [0.6, 0.01, -0.05, 0.95] }
+  transition: { duration: 0.8, ease: [0.6, 0.01, 0.05, 0.95] }
 };
 
 const ServiceSection = ({ num, title, desc, details }: { num: string, title: string, desc: string, details: string[] }) => (
